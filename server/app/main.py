@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = ["https://1f84-197-232-104-16.ngrok-free.app"]  # Correct format
+origins = ["https://6e4c-196-216-66-22.ngrok-free.app"]  # Correct format
 
 app.add_middleware(
     CORSMiddleware,

@@ -14,8 +14,8 @@ const useFetch = () => {
          setIsLoading(true)
 
         try {
-            const response = await axios.get('https://1f84-197-232-104-16.ngrok-free.app/products/')
-
+            const response = await axios.get('https://6e4c-196-216-66-22.ngrok-free.app/products/')
+           
             setData(response.data)
             setIsLoading(false)
         } catch (error) {

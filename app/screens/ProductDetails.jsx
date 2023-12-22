@@ -15,13 +15,13 @@ const ProductDetails = ({ navigation }) => {
   const route = useRoute();
 
   const {product } = route.params;
+
+  console.log(product);
  
   return (
     <View style={styles.container}>
       <View style={styles.upperRow}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="chevron-back-circle" size={30} color="black" />
-        </TouchableOpacity>
+       
 
         <TouchableOpacity onPress={() => {}}>
           <Ionicons name="heart" size={30} color={COLORS.primary} />

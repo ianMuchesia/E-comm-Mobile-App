@@ -9,7 +9,6 @@ const ProductRow = () => {
 
 
 
-
   return (
     <View style={styles.container}>
       {
@@ -22,7 +21,7 @@ const ProductRow = () => {
         ):(
           <FlatList
           data={data}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item) => item.id}
           horizontal
           // showsHorizontalScrollIndicator={false}
           contentContainerStyle={{columnGap:SIZES.medium}}
