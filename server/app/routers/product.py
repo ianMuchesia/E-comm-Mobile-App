@@ -1,7 +1,7 @@
 from .. import models,schemas
 from ..database import get_db
 from sqlalchemy.orm import Session
-from fastapi import APIRouter, Depends, HTTPException,status
+from fastapi import APIRouter, Depends, HTTPException,status,Query
 from typing import List
 
 
@@ -11,8 +11,11 @@ router = APIRouter(
 )
 
 @router.get("/", response_model=List[schemas.ProductResponse])
-def get_posts(db:Session = Depends(get_db)):
-    products = db.query(models.Product).all()
+def get_posts(search: str = Query(None, title="Search Term"),db:Session = Depends(get_db)):
+    if search:
+        products = db.query(models.Product).filter(models.Product.title.ilike(f"%{search}%")).all()
+    else:
+        products = db.query(models.Product).all()
     return products
 
 
@@ -38,4 +41,5 @@ def get_products(product_id:str, db:Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Product not found")
 
     return product
+    
     

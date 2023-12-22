@@ -41,6 +41,12 @@ const styles = StyleSheet.create({
         backgroundColor:COLORS.primary,
         borderRadius:SIZES.medium,
     },
+    searchImage:{
+        resizeMode:'contain',
+        width:SIZES.width-80,
+        height:SIZES.height-300, 
+        opacity:0.6,
+    }
 })
 
 export default styles

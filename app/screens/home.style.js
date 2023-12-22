@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     ,
     cartNumber:{
         fontFamily:'regular',
-        fontWeight:600,
+        // fontWeight:600,
         fontSize:10,
         color:COLORS.lightWhite,
     }
